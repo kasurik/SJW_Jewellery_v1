@@ -253,6 +253,38 @@
     .custom-tab-content.custom-active-content { /* Specific class name for the active content */
       display: block;
     }
+
+    .content-center {
+      text-align: center; /* Center the content */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Vertically center content */
+      height: 100%; /* Ensure the column takes full height */
+      /*padding-left: 10%;*/
+    }
+    
+    .gold-text {
+      color: #B8860B; /* Darker Goldenrod */
+      border: 2px solid #DAA520;
+      padding: 10px;
+      margin: 5px;
+      display: inline-block;
+    }
+
+    @media (max-width: 768px) { /* Adjust breakpoint as needed */
+      .image-content-rotate-row .image-content-rotate-column:first-child,
+      .image-content-rotate-row .image-content-rotate-column:last-child {
+        display: none; /* Hide left and right images */
+      }
+    
+      .image-content-rotate-row .image-content-rotate-column:nth-child(2) {
+        width: 100%; /* Make the middle content take full width */
+      }
+
+      .content-center{
+        padding-left: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -325,9 +357,17 @@
               <div class="image-content-rotate-column">
                 <img src="/assets/img/hero.png" alt="Image 1" style="max-width: 100%;"  class="rotate-upside-down">
               </div>
-              <div class="image-content-rotate-column">
-                <h2>Content Area</h2>
-                <p>Your content goes here. You can include paragraphs, links, and other elements.</p>
+              <div class="image-content-rotate-column content-center"> 
+                <h2 class="gold-text">Exclusive Offer: 25% OFF</h2>
+                <h3 class="gold-text">All New Jewelry Designs</h3>
+                <p class="gold-text">April 15th (Under 40,000)</p>
+                <p class="gold-text">April 15th (Under 40,000)</p>
+                <div>
+                  <h4>Celebrate 25 Years of Sparkle with Us!</h4>
+                  <p>Join Sirisena Jewellers as we commemorate our 25th anniversary! To thank you for your continued support, we're thrilled to offer incredible discounts and exclusive deals throughout this special month. Discover stunning new designs and
+                     timeless classics, all at celebratory prices. Come and share in the joy of this milestone with us!</p>
+                </div>
+
               </div>
               <div class="image-content-rotate-column rotating-image-container">
                 <img class="rotating-image-element" src="/assets/img/25annivsry-br-no.png" alt="Rotating Image">
@@ -408,7 +448,7 @@
 
 
       <!-- horzontal-tab-set -->
-      const customTabButtons = document.querySelectorAll('.custom-tab-button');
+      <!-- const customTabButtons = document.querySelectorAll('.custom-tab-button');
       const customTabContents = document.querySelectorAll('.custom-tab-content');
       
       customTabButtons.forEach(button => {
@@ -422,6 +462,6 @@
           document.getElementById(tabId).classList.add('custom-active-content');
         });
       });
-      
+       -->
 </body>
 </html>
