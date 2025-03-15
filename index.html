@@ -15,6 +15,45 @@
 
   <style>
    
+/*golden price card*/
+.gold-price-card {
+  display: flex;
+  background-color: #f8f8f8;
+  border: 1px solid #eee;
+  padding: 8px 12px;
+  /*border-radius: 4px;*/
+  margin: 0 15px;
+  align-items: center;
+  white-space: nowrap; /* Prevent wrapping */
+  border-radius: 30px;
+}
+
+.gold-price-item {
+  display: flex;
+  margin-right: 15px;
+}
+
+.gold-price-item:last-child {
+  margin-right: 0;
+}
+
+.gold-type {
+  font-weight: bold;
+  margin-right: 5px;
+  color: #333;
+}
+
+.gold-value {
+  color: #DAA520;
+}
+
+@media (max-width: 768px) {
+  .gold-price-card {
+    display: none;
+  }
+}
+/*********************************/
+
     #logo-sjw{
       max-width: 100px; /* Adjust for desktop size */
     }
@@ -223,6 +262,18 @@
             <a href="/" class="logo">
               <img id="logo-sjw" src="/assets/img/white-bg-logo.png" alt="logo" />
             </a>
+
+            <div class="gold-price-card"> 
+              <div class="gold-price-item">
+                <span class="gold-type">22K:</span> 
+                <span class="gold-value" id="22k-price">26,059.80	(LKR)</span>
+              </div>
+              <div class="gold-price-item">
+                <span class="gold-type">24K:</span>
+                <span class="gold-value" id="24k-price">28,428.87(LKR)</span>
+              </div>
+            </div>
+
             <ul class="menu _desktop-flex">
               <li class="menu-item active"><a href="/">Home</a></li>
               <li class="menu-item"><a href="/">About</a></li>
