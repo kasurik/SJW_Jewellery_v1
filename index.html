@@ -12,13 +12,184 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <style>
+   
+    #logo-sjw{
+      max-width: 100px; /* Adjust for desktop size */
+    }
+    
+    @media (max-width: 768px) { /* Adjust for mobile size */
+      #logo-sjw{
+        max-width: 80px;
+      }
+    }
+
+    #hero-title{
+      color: #DAA520  ;
+    }
+    .rotate-right {
+      transform: rotate(180deg); /* Rotates the image 90 degrees clockwise */
+    }
+    .gold-shine-bar {
+      width: 100%;
+      height: 10px;
+      background: linear-gradient(90deg, 
+        #fff, 
+        #FFD700, 
+        #fff, 
+        #FFD700, 
+        #fff);
+      background-size: 400% 100%;
+      animation: shine 10s linear infinite;
+    }
+    
+    @keyframes shine {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 400% 50%;
+      }
+    }
+
+    .inner-banner {
+      width: 100%;
+      text-align: center;
+      padding: 2px 0; /* Adjust padding as needed */
+      /*background-color: #FFD700; */
+      background-color: #DAA520;
+      /* Example background color */
+    }
+    
+    .inner-banner h1 {
+      font-size: 4em; /* Adjust font size as needed */
+      font-weight: bold;
+      color: #fff; /* Example text color */
+      border:1px solid #DAA520;
+      margin: 0;
+    }
+    
+    .container {
+      position: relative; /* Needed for absolute positioning of the image */
+      width: 100%; /* Adjust as needed */
+      height: 400px; /* Adjust as needed */
+      background-color:transparent; /* Example background color */
+    }
+    
+    .text-content {
+      position: absolute;
+      top: 50%;
+      left: 20px; /* Adjust as needed */
+      transform: translateY(-50%);
+      /* Add styles for your text here */
+    }
+    
+    .image-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%; /* Make the image fill the container's height */
+      /* If you want to limit the width: */
+      /* max-width: 50%; */
+    }
+    
+    .image-right img {
+      height: 100%;
+      object-fit: contain; /* Or 'cover' if you want it to fill the width */
+    }
+
+   
+    
+    .discount-card-container { /* Specific class name */
+      perspective: 1000px;
+      width: 200px;
+      height: 300px;
+      position: relative;
+      margin: 50px auto;
+    }
+    
+    .discount-card { /* Specific class name */
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+    }
+    
+    .discount-card.flipped { /* Specific class name */
+      transform: rotateY(180deg);
+    }
+    
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .card-front {
+      background-color: transparent;
+    }
+    
+    .card-back {
+      background-color: #e0e0e0;
+      transform: rotateY(180deg);
+    }
+    
+    .card-front img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    
+    .discount {
+      font-size: 3em;
+      font-weight: bold;
+      color: #d32f2f;
+    }
+
+    .image-content-rotate-row { /* Specific class name for the row */
+      display: flex;
+      width: 100%;
+    }
+    
+    .image-content-rotate-column { /* Specific class name for columns */
+      flex: 1;
+      /*padding: 20px;*/
+      box-sizing: border-box;
+    }
+    
+    .rotating-image-container { /* Specific class name for rotating image container */
+      text-align: center; 
+     
+    }
+    .rotate-upside-down {
+      transform: rotate(180deg);
+    }
+    .rotating-image-element { /* Specific class name for rotating image element */
+      max-width: 100%;
+      height: auto;
+      animation: rotateImage 10s linear infinite;
+    }
+    @keyframes rotateImage {
+      0% {
+        transform: rotateY(0deg);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
+  </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
           <div class="nav-container">
             <a href="/" class="logo">
-              <img src="/assets/img/logo.jpg" alt="logo" />
+              <img id="logo-sjw" src="/assets/img/white-bg-logo.png" alt="logo" />
             </a>
             <ul class="menu _desktop-flex">
               <li class="menu-item active"><a href="/">Home</a></li>
@@ -44,19 +215,78 @@
           <section id="hero" class="hero">
               <div class="hero-container">
                   <div class="hero-left _desktop">
-                      <img class="hero-img" src="/assets/img/hero.png" alt="hero" />
+                    <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" />
+                      <!-- <img src="/assets/img/hero.png" class="rotate-right" alt="hero" /> -->
                   </div>
                   <div class="hero-right">
-                      <h3>Discover Breathtaking Trails,  and Embrace the Wilderness</h3>
-                      <h1>Sirisena Jewellers & Workshop</h1>
-                      <p>Step into a world of thrilling exploration with Summit Seekers. From serene nature walks to challenging mountain treks, we craft experiences that awaken your spirit of adventure. Let us guide you to uncharted landscapes and create memories that last a lifetime.</p>
+                      <h3>Unique Jewelry & Jewelry Making Workshops</h3>
+                      <h1 id="hero-title">Sirisena Jewellers & Workshop</h1>
+                      <p>Discover exquisite handcrafted jewelry and learn to create your own in our inspiring workshops!</p>
                       <div class="hero-btns">
-                          <button class="btn btn-primary">Explore Trails</button>
-                          <button class="btn btn-secondary">Book Now</button>
+                          <button class="btn btn-primary">More <i class="fa-solid fa-angles-right"></i></button>
+                          <button class="btn btn-secondary">Contact Us <i class="fa-solid fa-phone-flip"></i></button>
                       </div>
                   </div>
               </div>
           </section>
+          <div class="gold-shine-bar"></div>
+          <section id="features" class="features-banner">
+            <!-- <h4 class="section-subtitle center">We are awesome</h4> -->
+            <!-- <h2 class="section-title center">Why Choose Summit Seekers</h2> -->
+            <div class="inner-banner">
+              <h1>EXCLUSIVE OFFERS!</h1>
+          
+
+            </div>
+            <div class="image-content-rotate-row">
+              <div class="image-content-rotate-column">
+                <img src="/assets/img/hero.png" alt="Image 1" style="max-width: 100%;"  class="rotate-upside-down">
+              </div>
+              <div class="image-content-rotate-column">
+                <h2>Content Area</h2>
+                <p>Your content goes here. You can include paragraphs, links, and other elements.</p>
+              </div>
+              <div class="image-content-rotate-column rotating-image-container">
+                <img class="rotating-image-element" src="/assets/img/25annivsry-br-no.png" alt="Rotating Image">
+              </div>
+            </div>
+            
+            <!-- <div class="row">
+              <div class="column">
+                <img src="/assets/img/ring1.png" alt="Image 1" style="max-width: 100%;">
+              </div>
+              <div class="column">
+                <h2>Detail Content</h2>
+                <p>Your detailed content goes here. You can add more text, links, or other elements.</p>
+                <p>More details...</p>
+              </div>
+              <div class="column ring-image">
+                <img src="/assets/img/25thAnvisary.png" alt="Ring Image">
+                <div class="discount-card-container"> <div class="discount-card" id="myDiscountCard"> <div class="card-face card-front">
+                  <img src="/assets/img/25annivsry-br-no.png" alt="Card Image">
+                </div>
+                <div class="card-face card-back">
+                  <div class="discount">
+                    <img src="/assets/img/25th.png" alt="Card Image">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+                <div class="shine"></div>
+              </div>
+            </div> -->
+            <!-- <div class="features-container">
+                <div class="feature-item">
+                    <i class="icon fa-solid fa-earth-oceania"></i>
+                    <h3>Explore the World</h3>
+                    <p>Discover breathtaking trails and hidden gems across the globe. From the majestic peaks of the Himalayas to the.</p>
+                </div>
+             
+              
+            </div> -->
+        </section>
+        <div class="gold-shine-bar"></div>
           <section id="features" class="features">
               <h4 class="section-subtitle center">We are awesome</h4>
               <h2 class="section-title center">Why Choose Summit Seekers</h2>
@@ -146,5 +376,14 @@
       <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.1/js/all.min.js"></script>
       <script src="/assets/js/script.js"></script>
     </body>
+
+
+    <!-- discount crd -->
+    <script>
+      document.getElementById('myDiscountCard').addEventListener('click', function() {
+        this.classList.toggle('flipped');
+      });
+      </script>
+      
 </body>
 </html>

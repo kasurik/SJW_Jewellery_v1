@@ -2,12 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif,lobster;
 }
 
 :root {
     --text-color: #10221B;
-    --primary-color: #1DC5CE;
+    /* --primary-color: #1DC5CE; */
+    --primary-color: #DAA520 ;
     --primary-color-light: #1dc5ce63;
     --bg-color: #f9fcff;
 }
@@ -29,6 +30,7 @@ header{
     max-width: 1600px;
     margin: 0 auto;
     gap: 80px;
+    border-bottom: 1px solid #FFD700   ;
 }
 
 .menu {
@@ -159,6 +161,7 @@ header{
 .hero-right h3 {
     font-size: 1.5rem;
     font-weight: 500;
+    padding-bottom: 55px;
 }
 
 .hero-right p {
@@ -173,6 +176,15 @@ header{
 
 .about{
     height: 100vh;
+}
+
+.features-banner{
+    /* padding: 10px 20px; */
+    background-image: url(/assets/img/bg-2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
 
 .features{
