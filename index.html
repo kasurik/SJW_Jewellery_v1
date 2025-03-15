@@ -182,6 +182,38 @@
         transform: rotateY(360deg);
       }
     }
+
+    /*horozontal-tab-set*/
+    .custom-tab-container { /* Specific class name for the container */
+      width: 100%;
+      border: 1px solid #ccc;
+    }
+    
+    .custom-tab-header { /* Specific class name for the header */
+      display: flex;
+    }
+    
+    .custom-tab-button { /* Specific class name for the buttons */
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      background-color: #f0f0f0;
+      border-bottom: 1px solid #ccc;
+      cursor: pointer;
+    }
+    
+    .custom-tab-button.custom-active-tab { /* Specific class name for the active button */
+      background-color: #ddd;
+    }
+    
+    .custom-tab-content { /* Specific class name for the content */
+      padding: 20px;
+      display: none;
+    }
+    
+    .custom-tab-content.custom-active-content { /* Specific class name for the active content */
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -232,7 +264,7 @@
           <div class="gold-shine-bar"></div>
           <section id="features" class="features-banner">
             <!-- <h4 class="section-subtitle center">We are awesome</h4> -->
-            <!-- <h2 class="section-title center">Why Choose Summit Seekers</h2> -->
+            <!-- <h2 class="section-title center">Why Choose SIrisena Jewellers</h2> -->
             <div class="inner-banner">
               <h1>EXCLUSIVE OFFERS!</h1>
           
@@ -287,69 +319,7 @@
             </div> -->
         </section>
         <div class="gold-shine-bar"></div>
-          <section id="features" class="features">
-              <h4 class="section-subtitle center">We are awesome</h4>
-              <h2 class="section-title center">Why Choose Summit Seekers</h2>
-              <div class="features-container">
-                  <div class="feature-item">
-                      <i class="icon fa-solid fa-earth-oceania"></i>
-                      <h3>Explore the World</h3>
-                      <p>Discover breathtaking trails and hidden gems across the globe. From the majestic peaks of the Himalayas to the.</p>
-                  </div>
-                  <div class="feature-item">
-                      <i class="icon fa-solid fa-earth-oceania"></i>
-                      <h3>Explore the World</h3>
-                      <p>Discover breathtaking trails and hidden gems across the globe. From the majestic peaks of the Himalayas to the.</p>
-                  </div>
-                  <div class="feature-item">
-                      <i class="icon fa-solid fa-earth-oceania"></i>
-                      <h3>Explore the World</h3>
-                      <p>Discover breathtaking trails and hidden gems across the globe. From the majestic peaks of the Himalayas to the.</p>
-                  </div>
-                  <div class="feature-item">
-                      <i class="icon fa-solid fa-earth-oceania"></i>
-                      <h3>Explore the World</h3>
-                      <p>Discover breathtaking trails and hidden gems across the globe. From the majestic peaks of the Himalayas to the.</p>
-                  </div>
-              </div>
-          </section>
-          <section id="about" class="about">
-            <div class="about-container">
-              <div class="about-left">
-                <h4 class="section-subtitle">
-                  About Summit Seekers
-                </h4>
-                <h2 class="section-title">
-                  Your Gateway to the Great Outdoors
-                </h2>
-                <p>Since 2021, Summit Seekers has been guiding adventurers to explore stunning trails and conquer breathtaking peaks. From short hikes to week-long treks, we craft experiences that inspire and excite.</p>
-                <div class="about-links">
-                  <ul class="about-links-list">
-                    <li class="about-links-item">
-                      <i class="icon fa-solid fa-check"></i>
-                      <p>Expert Guides</p>
-                    </li>
-                    <li class="about-links-item"  >
-                      <i class="icon  fa-solid fa-check"></i>
-                      <p>Expert Guides</p>
-                    </li>
-                    <li class="about-links-item">
-                      <i class="icon fa-solid fa-check"></i>
-                      <p>Expert Guides</p>
-                    </li>
-                  </ul>
-                  <div class="about-video">
-                    <a href="#">
-                      <i class="fa-regular fa-circle-play"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="about-right">
-                <img src="/assets/img/about-image.png" alt="about" />
-              </div>
-            </div>
-          </section>
+      
       </main>
       <div class="overlay d-none" id="overlay"></div>
       <div class="mobile-menu d-none" id="mobileMenu">
@@ -384,6 +354,23 @@
         this.classList.toggle('flipped');
       });
       </script>
+
+
+      <!-- horzontal-tab-set -->
+      const customTabButtons = document.querySelectorAll('.custom-tab-button');
+      const customTabContents = document.querySelectorAll('.custom-tab-content');
+      
+      customTabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const tabId = button.dataset.tab;
+      
+          customTabButtons.forEach(btn => btn.classList.remove('custom-active-tab'));
+          customTabContents.forEach(content => content.classList.remove('custom-active-content'));
+      
+          button.classList.add('custom-active-tab');
+          document.getElementById(tabId).classList.add('custom-active-content');
+        });
+      });
       
 </body>
 </html>
