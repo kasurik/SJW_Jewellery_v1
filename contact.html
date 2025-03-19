@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - [Your Jewellery Site Name]</title>
+    <style>
+        .contact-body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .contact-info {
+            width: 45%;
+            padding-right: 20px;
+            border-right: 1px solid #eee;
+            box-sizing: border-box;
+        }
+
+        .contact-info h2 {
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            line-height: 1.6;
+        }
+
+        .contact-form-container {
+            width: 55%;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form button {
+            background-color: #d4af37;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .contact-form button:hover {
+            background-color: #c29e2f;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .contact-info, .contact-form-container {
+                width: 100%;
+                padding: 0;
+                border-right: none;
+            }
+            .contact-info{
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="contact-body">
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Our Location</h2>
+            <p><strong>[Your Jewellery Shop Name]</strong><br>
+            123 Gold Street,<br>
+            Cityville, State 12345<br>
+            Country</p>
+            <p><strong>Phone:</strong> +1 123 456 7890<br>
+            <strong>Email:</strong> info@[yourjewellerysite].com</p>
+            <p><strong>Opening Hours:</strong><br>
+            Monday - Saturday: 10:00 AM - 7:00 PM<br>
+            Sunday: Closed</p>
+        </div>
+
+        <div class="contact-form-container">
+            <h2>Contact Us</h2>
+            <form id="contactForm" action="#" method="post" class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <div id="nameError" class="error-message">Please enter your name.</div>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div id="emailError" class="error-message">Please enter a valid email address.</div>
+
+                <label for="phone">Phone Number (Optional):</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <div id="messageError" class="error-message">Please enter your message.</div>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            let isValid = true;
+
+            const nameInput = document.getElementById('name');
+            const nameError = document.getElementById('nameError');
+            if (nameInput.value.trim() === '') {
+                nameError.style.display = 'block';
+                isValid = false;
+            } else {
+                nameError.style.display = 'none';
+            }
+
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                emailError.style.display = 'block';
+                isValid = false;
+            } else {
+                emailError.style.display = 'none';
+            }
+
+            const messageInput = document.getElementById('message');
+            const messageError = document.getElementById('messageError');
+            if (messageInput.value.trim() === '') {
+                messageError.style.display = 'block';
+                isValid = false;
+            } else {
+                messageError.style.display = 'none';
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+</html>

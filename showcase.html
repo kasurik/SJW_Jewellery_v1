@@ -286,7 +286,191 @@
       }
     }
 
-  
+    #myContent {
+        display: none; /* Initially hide the content */
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+    }
+
+
+    /*****************model related*******************************/
+ /* Existing CSS (features-container, feature-item, etc.) */
+ .abt-features-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.abt-feature-item {
+    border: 1px dotted var(--primary-color);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer; /* Make it look clickable */
+}
+
+/* ... (rest of your feature-item CSS) ... */
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+   /* width: 80%;*/
+   width: 60%;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.model-img{
+    width: 25%;
+    height: 25%;
+}
+    /*********************************************/
+    .model-img {
+        max-width: 100px !important; /* Adjust as needed */
+        height: auto !important;
+      }
+    /***********************************/
+
+    .model-container {
+        display: flex;
+        align-items: flex-start; /* Align items to the top */
+    }
+
+    .model-img {
+        max-width: 50px;
+        height: auto;
+        margin-right: 20px; /* Add space between image and text */
+    }
+
+    .model-details {
+        flex-grow: 1; /* Allow details to take up remaining space */
+    }
+
+    .model-details h3 {
+        margin-bottom: 5px;
+    }
+
+    .model-details p {
+        margin-bottom: 10px;
+    }
+
+    /******ribbon************/
+    .image-ribbon {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: auto; /* Enable horizontal scrolling on small screens */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        width: 100%; /* Take full width */
+    }
+
+    .image-ribbon img {
+        flex: 1 0 auto; /* Allow images to shrink but not grow */
+        width: 10%; /* Each image takes 25% of the width */
+        height: 10%;
+        display: block; /* Remove extra space below images */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .image-ribbon img {
+            width: auto; /* Allow images to have their natural width on smaller screens */
+            flex-basis: auto;
+        }
+    }
+    /*******************/
+
+    /***********jewellery card**********/
+    .jewellery-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .jewellery-card {
+        width: 23%; /* Approximately 4 cards per row */
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .jewellery-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .jewellery-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .jewellery-card-content {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .jewellery-card-content h3 {
+        margin-bottom: 5px;
+        color: #333;
+        font-size: 1.2rem;
+    }
+
+    .jewellery-card-content p {
+        color: #888;
+        font-size: 1rem;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+        .jewellery-card {
+            width: 48%; /* 2 cards per row on medium screens */
+        }
+    }
+
+    @media (max-width: 600px) {
+        .jewellery-card {
+            width: 100%; /* 1 card per row on small screens */
+        }
+    }
+    /**********************/
   </style>
 </head>
 <body>
@@ -309,10 +493,10 @@
             </div>
 
             <ul class="menu _desktop-flex">
-              <li class="menu-item active"><a href="/">Home</a></li>
-              <li class="menu-item"><a href="aboutus.html">About</a></li>
+              <li class="menu-item "><a href="index.html">Home</a></li>
+              <li class="menu-item "><a href="aboutus.html">About</a></li>
               <li class="menu-item"><a href="services.html">Service</a></li>
-              <li class="menu-item"><a href="showcase.html">Showcase</a></li>
+              <li class="menu-item active"><a href="showcase.html">Showcase</a></li>
               <li class="menu-item"><a href="contactus.html">Contact</a></li>
             </ul>
             <div class="nav-right">
@@ -332,138 +516,111 @@
           <section id="hero" class="hero">
               <div class="hero-container">
                   <div class="hero-left _desktop">
-                    <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" />
+                    <img class="hero-img" src="/assets/img/aboutus-hero-left-pic2.jpg" class="rotate-right" alt="hero" />
                       <!-- <img src="/assets/img/hero.png" class="rotate-right" alt="hero" /> -->
                   </div>
                   <div class="hero-right">
-                      <h3>Unique Jewelry & Jewelry Making Workshops</h3>
+                      <h3>Our Showcase</h3>
                       <h1 id="hero-title">Sirisena Jewellers & Workshop</h1>
-                      <p>Discover exquisite handcrafted jewelry and learn to create your own in our inspiring workshops!</p>
-                      <div class="hero-btns">
+                      <p>We are 30 years crafting fine jewelry. We blend tradition with modern designs, 
+                        offering custom pieces and expert repairs. Quality and personalized service are our hallmarks.</p>
+                      <!-- <div class="hero-btns">
                           <button class="btn btn-primary">More <i class="fa-solid fa-angles-right"></i></button>
                           <button class="btn btn-secondary">Contact Us <i class="fa-solid fa-phone-flip"></i></button>
-                      </div>
+                      </div> -->
                   </div>
               </div>
+
+              <!-- new ribbon -->
+              <section class="image-ribbon">
+                <img src="assets/img/ribbon-j1.jpg" alt="Image 1" style="width: 50px; height: 150px;">
+                <img src="assets/img/ribbon-j2.jpg" alt="Image 2" style="width: 50px; height: 150px;">
+                <img src="assets/img/ribbon-j3.jpg" alt="Image 3" style="width: 50px; height: 150px;">
+                <img src="assets/img/ribbon-j4.jpg" alt="Image 4" style="width: 50px; height: 150px;">
+            </section>
+               <!-- ribbon -->
+
+               <!-- jewellery card set -->
+               <div class="jewellery-container">
+                <div class="jewellery-card">
+                    <img src="assets/img/ribbon-j1.jpg" alt="Ring">
+                    <div class="jewellery-card-content">
+                        <h3>Elegant Ring</h3>
+                        <p>$199.99</p>
+                    </div>
+                </div>
+                <div class="jewellery-card">
+                    <img src="assets/img/ribbon-j1.jpg" alt="Necklace">
+                    <div class="jewellery-card-content">
+                        <h3>Diamond Necklace</h3>
+                        <p>$499.99</p>
+                    </div>
+                </div>
+                <div class="jewellery-card">
+                    <img src="assets/img/ribbon-j1.jpg" alt="Earrings">
+                    <div class="jewellery-card-content">
+                        <h3>Pearl Earrings</h3>
+                        <p>$149.99</p>
+                    </div>
+                </div>
+                <div class="jewellery-card">
+                    <img src="assets/img/ribbon-j1.jpg" alt="Bracelet">
+                    <div class="jewellery-card-content">
+                        <h3>Gold Bracelet</h3>
+                        <p>$299.99</p>
+                    </div>
+                </div>
+        
+                <div class="jewellery-card">
+                    <img src="assets/img/ribbon-j1.jpg" alt="Ring">
+                    <div class="jewellery-card-content">
+                        <h3>Ruby Ring</h3>
+                        <p>$349.99</p>
+                    </div>
+                </div>
+                 <div class="jewellery-card">
+                    <img src="assets/img/ribbon-j1.jpg" alt="Necklace">
+                    <div class="jewellery-card-content">
+                        <h3>Silver Necklace</h3>
+                        <p>$199.99</p>
+                    </div>
+                </div>
+                <div class="jewellery-card">
+                    <img src="assets/img/ribbon-j1.jpg" alt="Earrings">
+                    <div class="jewellery-card-content">
+                        <h3>Emerald Earrings</h3>
+                        <p>$249.99</p>
+                    </div>
+                </div>
+                <div class="jewellery-card">
+                    <img src="assets/img/ribbon-j1.jpg" alt="Bracelet">
+                    <div class="jewellery-card-content">
+                        <h3>Platinum Bracelet</h3>
+                        <p>$599.99</p>
+                    </div>
+                </div>
+            </div>
+        
+               <!-- jewellery card set -->
           </section>
           <div class="gold-shine-bar"></div>
-          <section id="features" class="features-banner">
-            <!-- <h4 class="section-subtitle center">We are awesome</h4> -->
-            <!-- <h2 class="section-title center">Why Choose SIrisena Jewellers</h2> -->
-            <div class="inner-banner">
-              <h1>EXCLUSIVE OFFERS!</h1>
-          
+      
 
-            </div>
-            <div class="image-content-rotate-row">
-              <div class="image-content-rotate-column">
-                <img src="/assets/img/hero.png" alt="Image 1" style="max-width: 100%;"  class="rotate-upside-down">
-              </div>
-              <div class="image-content-rotate-column content-center"> 
-                <h2 class="gold-text">Exclusive Offer: 25% OFF</h2>
-                <h3 class="gold-text">All New Jewelry Designs</h3>
-                <p class="gold-text">April 15th (Under 40,000)</p>
-                <p class="gold-text">April 15th (Under 40,000)</p>
-                <div>
-                  <h4>Celebrate 25 Years of Sparkle with Us!</h4>
-                  <p>Join Sirisena Jewellers as we commemorate our 25th anniversary! To thank you for your continued support, we're thrilled to offer incredible discounts and exclusive deals throughout this special month. Discover stunning new designs and
-                     timeless classics, all at celebratory prices. Come and share in the joy of this milestone with us!</p>
-                </div>
-
-              </div>
-              <div class="image-content-rotate-column rotating-image-container">
-                <img class="rotating-image-element" src="/assets/img/25annivsry-br-no.png" alt="Rotating Image">
-              </div>
-            </div>
-            
-            <!-- <div class="row">
-              <div class="column">
-                <img src="/assets/img/ring1.png" alt="Image 1" style="max-width: 100%;">
-              </div>
-              <div class="column">
-                <h2>Detail Content</h2>
-                <p>Your detailed content goes here. You can add more text, links, or other elements.</p>
-                <p>More details...</p>
-              </div>
-              <div class="column ring-image">
-                <img src="/assets/img/25thAnvisary.png" alt="Ring Image">
-                <div class="discount-card-container"> <div class="discount-card" id="myDiscountCard"> <div class="card-face card-front">
-                  <img src="/assets/img/25annivsry-br-no.png" alt="Card Image">
-                </div>
-                <div class="card-face card-back">
-                  <div class="discount">
-                    <img src="/assets/img/25th.png" alt="Card Image">
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-                <div class="shine"></div>
-              </div>
-            </div> -->
-            <!-- <div class="features-container">
-                <div class="feature-item">
-                    <i class="icon fa-solid fa-earth-oceania"></i>
-                    <h3>Explore the World</h3>
-                    <p>Discover breathtaking trails and hidden gems across the globe. From the majestic peaks of the Himalayas to the.</p>
-                </div>
-             
-              
-            </div> -->
-        </section>
-
-
-        <div class="gold-shine-bar"></div>
-          <section id="features" class="features">
-              <!-- <h4 class="section-subtitle center">We are awesome</h4> -->
-              <h2 class="section-title center">Our Showcase</h2>
-              <div class="features-container">
-                  <div class="feature-item">
-                      <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-                      <h6>Explore the World</h6>
-                      <p>Discover breathtaking trails and .</p>
-                  </div>
-                  <div class="feature-item">
-                    <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-                    <h6>Explore the World</h6>
-                    <p>Discover breathtaking trails and .</p>
-                </div>
-                <div class="feature-item">
-                  <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-                  <h6>Explore the World</h6>
-                  <p>Discover breathtaking trails and .</p>
-              </div>
-              <div class="feature-item">
-                <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-                <h6>Explore the World</h6>
-                <p>Discover breathtaking trails and .</p>
-            </div>
-            <div class="feature-item">
-              <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-              <h6>Explore the World</h6>
-              <p>Discover breathtaking trails and .</p>
-          </div>
-          <div class="feature-item">
-            <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-            <h6>Explore the World</h6>
-            <p>Discover breathtaking trails and .</p>
-        </div>
-              </div>
-          </section>
-          <section id="about" class="about">
+         
+          <section id="about" class="about-page">
             <div class="about-container">
               <div class="about-left">
                 <!-- <h4 class="section-subtitle">
                   About SJW Jewellers
                 </h4> -->
                 <h2 class="section-title">
-                  Unique Jewelry & Jewelry Making Workshops
+                  Our Story
                 </h2>
                 <h2>Sirisena Jewellery Workshop</h2>
                 <p>Since 2021, Sirisena Jewellers has been guiding artisans to explore stunning designs and craft breathtaking pieces. From simple pendants to intricate sets, we craft experiences that inspire and excite.</p>
                 <p>Discover exquisite handcrafted jewellery and learn the art of jewellery making at Sirisena Jewellery Workshop. Explore our latest collections and workshop schedules.</p>
             
-                <div class="about-links">
+                <!-- <div class="about-links">
                   <ul class="about-links-list">
                     <li class="about-links-item">
                       <i class="icon fa-solid fa-check"></i>
@@ -483,12 +640,13 @@
                       <i class="fa-regular fa-circle-play"></i>
                     </a>
                   </div>
-                </div>
+                </div> -->
               </div>
               <div class="about-right">
-                <!-- <img src="/assets/img/about-image.png" alt="about" /> -->
+                <img src="/assets/img/right-about.jpg" alt="about" />
+                <img src="/assets/img/right-about.jpg" alt="about" />
 
-                <div class="custom-tab-container">
+                <!-- <div class="custom-tab-container">
                   <div class="custom-tab-header">
                     <div class="custom-tab-button custom-active-tab" data-tab="custom-tab1">Tab 1</div>
                     <div class="custom-tab-button" data-tab="custom-tab2">Tab 2</div>
@@ -503,10 +661,76 @@
                   <div class="custom-tab-content" id="custom-tab3">
                     <p>Content for Tab 3.</p>
                   </div>
-                </div>
+                </div> -->
               </div>
+
+              
             </div>
           </section>
+          <section id="features" class="abt-features">
+            <!-- <h4 class="section-subtitle center">We are awesome</h4> -->
+            <h2 class="section-title center">Our Team</h2>
+            <div class="features-container abt-features-container">
+                <div class="feature-item abt-feature-item">
+                    <div>  <img class="hero-img" src="/assets/img/female-team.jpg" class="rotate-right" alt="hero" /></div>
+                    <h6>Chairperson</h6>
+                    <p>Discover breathtaking trails and .</p>
+                </div>
+                <div class="feature-item abt-feature-item">
+                  <div>  <img class="hero-img" src="/assets/img/male-team.jpg" class="rotate-right" alt="hero" /></div>
+                  <h6>Managing Director</h6>
+                  <p>Discover breathtaking trails and .</p>
+              </div>
+              <div class="feature-item abt-feature-item">
+                <div>  <img class="hero-img" src="/assets/img/female-team.jpg" class="rotate-right" alt="hero" /></div>
+                <h6>Director</h6>
+                <p>Discover breathtaking trails and .</p>
+            </div>
+            <div class="feature-item abt-feature-item">
+              <div>  <img class="hero-img" src="/assets/img/male-team.jpg" class="rotate-right" alt="hero" /></div>
+              <h6>Director</h6>
+              <p>Discover breathtaking trails and .</p>
+          </div>
+          <div class="feature-item abt-feature-item">
+            <div>  <img class="hero-img" src="/assets/img/female-team.jpg" class="rotate-right" alt="hero" /></div>
+            <h6>Director</h6>
+            <p>Discover breathtaking trails and .</p>
+        </div>
+        <div class="feature-item abt-feature-item">
+          <div>  <img class="hero-img" src="/assets/img/male-team.jpg" class="rotate-right" alt="hero" /></div>
+          <h6>Chief Executive Officer</h6>
+          <p>Discover breathtaking trails and .</p>
+      </div>
+   
+            </div>
+            <!-- model open more Info -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p id="modalDetails"></p>
+                    <!-- <div>  <img class="hero-img" src="/assets/img/male-team.jpg" class="rotate-right model-img" alt="hero" /></div> -->
+                    <h6>Chief Executive Officer</h6>
+                    <h3>John Doe</h3>
+                    <p>Discover breathtaking trails and .</p>
+                    <p>John is a seasoned developer with over 10 years of experience in building scalable web applications. He is passionate about clean code and innovative solutions.</p>
+
+                </div>
+            </div>
+
+         <!-- model -->
+         <!-- <div class="model-container">
+            <img class="model-img" src="/assets/img/male-team.jpg" alt="Person Image">
+            <div class="model-details">
+                <h3>John Doe</h3>
+                <p>Designation: Senior Developer</p>
+                <p>John is a seasoned developer with over 10 years of experience in building scalable web applications. He is passionate about clean code and innovative solutions.</p>
+            </div>
+        </div> -->
+
+         <!-- ********** -->
+
+            
+        </section>
       </main>
       <div class="overlay d-none" id="overlay"></div>
       <div class="mobile-menu d-none" id="mobileMenu">
@@ -514,6 +738,7 @@
           <a href="/">
             <img src="/assets/img/logo.jpg" alt="logo" />
           </a>
+        
         </div>
         <button class="mm-close-btn" id="mmCloseBtn"><i class="fa-solid fa-xmark"></i></button>
         <nav class="mm-menu">
@@ -566,36 +791,39 @@
             <p>&copy; 2025 Sirisena Jewellers & Workshop. All Rights Reserved.</p>
         </div>
     </footer>
+<!-- footer -->
 
-      <!-- footer -->
+
       <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.1/js/all.min.js"></script>
       <script src="/assets/js/script.js"></script>
     </body>
 
 
     <!-- discount crd -->
+ 
     <script>
-      document.getElementById('myDiscountCard').addEventListener('click', function() {
-        this.classList.toggle('flipped');
-      });
-      </script>
+        const modal = document.getElementById("myModal");
+        const modalDetails = document.getElementById("modalDetails");
+        const closeBtn = document.getElementsByClassName("close")[0];
+        const featureItems = document.querySelectorAll(".feature-item");
 
-
-      <!-- horzontal-tab-set -->
-      <!-- const customTabButtons = document.querySelectorAll('.custom-tab-button');
-      const customTabContents = document.querySelectorAll('.custom-tab-content');
-      
-      customTabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const tabId = button.dataset.tab;
-      
-          customTabButtons.forEach(btn => btn.classList.remove('custom-active-tab'));
-          customTabContents.forEach(content => content.classList.remove('custom-active-content'));
-      
-          button.classList.add('custom-active-tab');
-          document.getElementById(tabId).classList.add('custom-active-content');
+        featureItems.forEach(item => {
+            item.addEventListener("click", () => {
+                modalDetails.textContent = item.dataset.details;
+                modal.style.display = "block";
+            });
         });
-      });
-       -->
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+    
 </body>
 </html>

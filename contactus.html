@@ -286,7 +286,264 @@
       }
     }
 
-  
+    #myContent {
+        display: none; /* Initially hide the content */
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+    }
+
+
+    /*****************model related*******************************/
+ /* Existing CSS (features-container, feature-item, etc.) */
+ .contactus-features-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.abt-feature-item {
+    border: 1px dotted var(--primary-color);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer; /* Make it look clickable */
+}
+
+/* ... (rest of your feature-item CSS) ... */
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+   /* width: 80%;*/
+   width: 60%;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.model-img{
+    width: 25%;
+    height: 25%;
+}
+    /*********************************************/
+    .model-img {
+        max-width: 100px !important; /* Adjust as needed */
+        height: auto !important;
+      }
+    /***********************************/
+
+    .model-container {
+        display: flex;
+        align-items: flex-start; /* Align items to the top */
+    }
+
+    .model-img {
+        max-width: 50px;
+        height: auto;
+        margin-right: 20px; /* Add space between image and text */
+    }
+
+    .model-details {
+        flex-grow: 1; /* Allow details to take up remaining space */
+    }
+
+    .model-details h3 {
+        margin-bottom: 5px;
+    }
+
+    .model-details p {
+        margin-bottom: 10px;
+    }
+
+
+
+    /****************contactus*************************/
+    .contact-body {
+      /*  font-family: 'Arial', sans-serif;*/
+      font-family: 'Poppins', sans-serif,lobster;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+      
+    }
+
+    .contact-container {
+      /*  max-width: 1000px;*/
+      max-width: 100vw;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+      /*  border-radius: 8px;*/
+        /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        border-top: #DAA520 solid 1px;
+    }
+
+    .contact-info {
+        width: 45%;
+        padding-right: 20px;
+        border-right: 1px solid #eee;
+        box-sizing: border-box;
+    }
+
+    .contact-info h2 {
+        color: #d4af37;
+        margin-bottom: 20px;
+    }
+
+    .contact-info p {
+        line-height: 1.6;
+    }
+
+    .contact-form-container {
+        width: 55%;
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+
+    .contact-form label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .contact-form textarea {
+        resize: vertical;
+        min-height: 150px;
+    }
+
+    .contact-form button {
+        background-color: #d4af37;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .contact-form button:hover {
+        background-color: #c29e2f;
+    }
+
+    .error-message {
+        color: red;
+        margin-top: 5px;
+        display: none;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .contact-info, .contact-form-container {
+            width: 100%;
+            padding: 0;
+            border-right: none;
+        }
+        .contact-info{
+            margin-bottom: 20px;
+        }
+    }
+    /*****************contact second new section***********************/
+    .section-container {
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping on small screens */
+        max-width: 100vw;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #f8f8f8;
+        border-radius: 8px;
+       /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
+    }
+
+    .contact-text-content{
+        width: 50%;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+    contact-text-content h2 {
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .contact-text-content p {
+        line-height: 1.6;
+        color: #666;
+    }
+
+    .image-content {
+        width: 50%;
+        text-align: right;
+        box-sizing: border-box;
+    }
+
+    .image-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .contact-text-content, .image-content {
+            width: 100%;
+            padding: 0;
+            text-align: left; /* Align text left on mobile */
+        }
+
+        .image-content {
+            text-align: center; /* Center image on mobile */
+            margin-top: 20px; /* Add space between text and image */
+        }
+
+        .contact-text-content {
+            margin-bottom: 20px; /* Add space between text and image */
+        }
+    }
+    /*******************************************/
   </style>
 </head>
 <body>
@@ -309,11 +566,11 @@
             </div>
 
             <ul class="menu _desktop-flex">
-              <li class="menu-item active"><a href="/">Home</a></li>
-              <li class="menu-item"><a href="aboutus.html">About</a></li>
+              <li class="menu-item "><a href="index.html">Home</a></li>
+              <li class="menu-item "><a href="aboutus.html">About</a></li>
               <li class="menu-item"><a href="services.html">Service</a></li>
               <li class="menu-item"><a href="showcase.html">Showcase</a></li>
-              <li class="menu-item"><a href="contactus.html">Contact</a></li>
+              <li class="menu-item active"><a href="contactus.html">Contact</a></li>
             </ul>
             <div class="nav-right">
               <div class="icons">
@@ -332,181 +589,95 @@
           <section id="hero" class="hero">
               <div class="hero-container">
                   <div class="hero-left _desktop">
-                    <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" />
+                    <img class="hero-img" src="/assets/img/contact-pic1.jpg" class="rotate-right" alt="hero" />
                       <!-- <img src="/assets/img/hero.png" class="rotate-right" alt="hero" /> -->
                   </div>
                   <div class="hero-right">
-                      <h3>Unique Jewelry & Jewelry Making Workshops</h3>
-                      <h1 id="hero-title">Sirisena Jewellers & Workshop</h1>
-                      <p>Discover exquisite handcrafted jewelry and learn to create your own in our inspiring workshops!</p>
-                      <div class="hero-btns">
+                      <h3>Contact Us</h3>
+                      <!-- <h1 id="hero-title">Sirisena Jewellers & Workshop</h1> -->
+                      <p>Our team is committed to providing prompt and helpful responses. Please don't hesitate to reach out
+                         to us we look forward to hearing from you and assisting with any inquiries you may have.</p>
+                      <!-- <div class="hero-btns">
                           <button class="btn btn-primary">More <i class="fa-solid fa-angles-right"></i></button>
                           <button class="btn btn-secondary">Contact Us <i class="fa-solid fa-phone-flip"></i></button>
-                      </div>
+                      </div> -->
                   </div>
               </div>
           </section>
           <div class="gold-shine-bar"></div>
-          <section id="features" class="features-banner">
-            <!-- <h4 class="section-subtitle center">We are awesome</h4> -->
-            <!-- <h2 class="section-title center">Why Choose SIrisena Jewellers</h2> -->
-            <div class="inner-banner">
-              <h1>EXCLUSIVE OFFERS!</h1>
+      
+
+         
           
 
-            </div>
-            <div class="image-content-rotate-row">
-              <div class="image-content-rotate-column">
-                <img src="/assets/img/hero.png" alt="Image 1" style="max-width: 100%;"  class="rotate-upside-down">
-              </div>
-              <div class="image-content-rotate-column content-center"> 
-                <h2 class="gold-text">Exclusive Offer: 25% OFF</h2>
-                <h3 class="gold-text">All New Jewelry Designs</h3>
-                <p class="gold-text">April 15th (Under 40,000)</p>
-                <p class="gold-text">April 15th (Under 40,000)</p>
-                <div>
-                  <h4>Celebrate 25 Years of Sparkle with Us!</h4>
-                  <p>Join Sirisena Jewellers as we commemorate our 25th anniversary! To thank you for your continued support, we're thrilled to offer incredible discounts and exclusive deals throughout this special month. Discover stunning new designs and
-                     timeless classics, all at celebratory prices. Come and share in the joy of this milestone with us!</p>
-                </div>
+          <section>
 
-              </div>
-              <div class="image-content-rotate-column rotating-image-container">
-                <img class="rotating-image-element" src="/assets/img/25annivsry-br-no.png" alt="Rotating Image">
-              </div>
+            <div class="section-container">
+                <div class="contact-text-content">
+                    <h2>Our Story</h2>
+                    <p>We are a team dedicated to providing high-quality products and exceptional service. Our mission is to create a positive impact through innovation and customer satisfaction. We strive to build lasting relationships with our clients and partners.</p>
+                
+                    <h2 class="section-title">
+                        Our Story
+                      </h2>
+                      <h2>Sirisena Jewellery Workshop</h2>
+                      <p>Since 2021, Sirisena Jewellers has been guiding artisans to explore stunning designs and craft breathtaking pieces. From simple pendants to intricate sets, we craft experiences that inspire and excite.</p>
+                      <p>Discover exquisite handcrafted jewellery and learn the art of jewellery making at Sirisena Jewellery Workshop. Explore our latest collections and workshop schedules.</p>
+                  
+                </div>
+                <div class="image-content">
+                    <img src="assets/img/shop-pic.jpg" alt="Our Story Image">
+                </div>
             </div>
+          </section>
+          <section id="features" class="contactus-features">
+           
+ <!-- contacus -->
+
+ <div class="contact-body">
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Our Location</h2>
+            <p><strong>[Your Jewellery Shop Name]</strong><br>
+            123 Gold Street,<br>
+            Cityville, State 12345<br>
+            Country</p>
+            <p><strong>Phone:</strong> +1 123 456 7890<br>
+            <strong>Email:</strong> info@[yourjewellerysite].com</p>
+            <p><strong>Opening Hours:</strong><br>
+            Monday - Saturday: 10:00 AM - 7:00 PM<br>
+            Sunday: Closed</p>
+        </div>
+
+        <div class="contact-form-container">
+            <h2>Contact Us</h2>
+            <form id="contactForm" action="#" method="post" class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <div id="nameError" class="error-message">Please enter your name.</div>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div id="emailError" class="error-message">Please enter a valid email address.</div>
+
+                <label for="phone">Phone Number (Optional):</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <div id="messageError" class="error-message">Please enter your message.</div>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- contactus -->
             
-            <!-- <div class="row">
-              <div class="column">
-                <img src="/assets/img/ring1.png" alt="Image 1" style="max-width: 100%;">
-              </div>
-              <div class="column">
-                <h2>Detail Content</h2>
-                <p>Your detailed content goes here. You can add more text, links, or other elements.</p>
-                <p>More details...</p>
-              </div>
-              <div class="column ring-image">
-                <img src="/assets/img/25thAnvisary.png" alt="Ring Image">
-                <div class="discount-card-container"> <div class="discount-card" id="myDiscountCard"> <div class="card-face card-front">
-                  <img src="/assets/img/25annivsry-br-no.png" alt="Card Image">
-                </div>
-                <div class="card-face card-back">
-                  <div class="discount">
-                    <img src="/assets/img/25th.png" alt="Card Image">
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-                <div class="shine"></div>
-              </div>
-            </div> -->
-            <!-- <div class="features-container">
-                <div class="feature-item">
-                    <i class="icon fa-solid fa-earth-oceania"></i>
-                    <h3>Explore the World</h3>
-                    <p>Discover breathtaking trails and hidden gems across the globe. From the majestic peaks of the Himalayas to the.</p>
-                </div>
-             
-              
-            </div> -->
         </section>
 
+       
 
-        <div class="gold-shine-bar"></div>
-          <section id="features" class="features">
-              <!-- <h4 class="section-subtitle center">We are awesome</h4> -->
-              <h2 class="section-title center">Our Showcase</h2>
-              <div class="features-container">
-                  <div class="feature-item">
-                      <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-                      <h6>Explore the World</h6>
-                      <p>Discover breathtaking trails and .</p>
-                  </div>
-                  <div class="feature-item">
-                    <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-                    <h6>Explore the World</h6>
-                    <p>Discover breathtaking trails and .</p>
-                </div>
-                <div class="feature-item">
-                  <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-                  <h6>Explore the World</h6>
-                  <p>Discover breathtaking trails and .</p>
-              </div>
-              <div class="feature-item">
-                <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-                <h6>Explore the World</h6>
-                <p>Discover breathtaking trails and .</p>
-            </div>
-            <div class="feature-item">
-              <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-              <h6>Explore the World</h6>
-              <p>Discover breathtaking trails and .</p>
-          </div>
-          <div class="feature-item">
-            <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-            <h6>Explore the World</h6>
-            <p>Discover breathtaking trails and .</p>
-        </div>
-              </div>
-          </section>
-          <section id="about" class="about">
-            <div class="about-container">
-              <div class="about-left">
-                <!-- <h4 class="section-subtitle">
-                  About SJW Jewellers
-                </h4> -->
-                <h2 class="section-title">
-                  Unique Jewelry & Jewelry Making Workshops
-                </h2>
-                <h2>Sirisena Jewellery Workshop</h2>
-                <p>Since 2021, Sirisena Jewellers has been guiding artisans to explore stunning designs and craft breathtaking pieces. From simple pendants to intricate sets, we craft experiences that inspire and excite.</p>
-                <p>Discover exquisite handcrafted jewellery and learn the art of jewellery making at Sirisena Jewellery Workshop. Explore our latest collections and workshop schedules.</p>
-            
-                <div class="about-links">
-                  <ul class="about-links-list">
-                    <li class="about-links-item">
-                      <i class="icon fa-solid fa-check"></i>
-                      <p>Expert Guides</p>
-                    </li>
-                    <li class="about-links-item"  >
-                      <i class="icon  fa-solid fa-check"></i>
-                      <p>Expert Guides</p>
-                    </li>
-                    <li class="about-links-item">
-                      <i class="icon fa-solid fa-check"></i>
-                      <p>Expert Guides</p>
-                    </li>
-                  </ul>
-                  <div class="about-video">
-                    <a href="#">
-                      <i class="fa-regular fa-circle-play"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="about-right">
-                <!-- <img src="/assets/img/about-image.png" alt="about" /> -->
-
-                <div class="custom-tab-container">
-                  <div class="custom-tab-header">
-                    <div class="custom-tab-button custom-active-tab" data-tab="custom-tab1">Tab 1</div>
-                    <div class="custom-tab-button" data-tab="custom-tab2">Tab 2</div>
-                    <div class="custom-tab-button" data-tab="custom-tab3">Tab 3</div>
-                  </div>
-                  <div class="custom-tab-content custom-active-content" id="custom-tab1">
-                    <p>Content for Tab 1.</p>
-                  </div>
-                  <div class="custom-tab-content" id="custom-tab2">
-                    <p>Content for Tab 2.</p>
-                  </div>
-                  <div class="custom-tab-content" id="custom-tab3">
-                    <p>Content for Tab 3.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
       </main>
       <div class="overlay d-none" id="overlay"></div>
       <div class="mobile-menu d-none" id="mobileMenu">
@@ -514,6 +685,7 @@
           <a href="/">
             <img src="/assets/img/logo.jpg" alt="logo" />
           </a>
+        
         </div>
         <button class="mm-close-btn" id="mmCloseBtn"><i class="fa-solid fa-xmark"></i></button>
         <nav class="mm-menu">
@@ -566,36 +738,78 @@
             <p>&copy; 2025 Sirisena Jewellers & Workshop. All Rights Reserved.</p>
         </div>
     </footer>
+<!-- footer -->
 
-      <!-- footer -->
+
       <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.1/js/all.min.js"></script>
       <script src="/assets/js/script.js"></script>
     </body>
 
 
     <!-- discount crd -->
+ 
     <script>
-      document.getElementById('myDiscountCard').addEventListener('click', function() {
-        this.classList.toggle('flipped');
-      });
-      </script>
+        const modal = document.getElementById("myModal");
+        const modalDetails = document.getElementById("modalDetails");
+        const closeBtn = document.getElementsByClassName("close")[0];
+        const featureItems = document.querySelectorAll(".feature-item");
 
-
-      <!-- horzontal-tab-set -->
-      <!-- const customTabButtons = document.querySelectorAll('.custom-tab-button');
-      const customTabContents = document.querySelectorAll('.custom-tab-content');
-      
-      customTabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const tabId = button.dataset.tab;
-      
-          customTabButtons.forEach(btn => btn.classList.remove('custom-active-tab'));
-          customTabContents.forEach(content => content.classList.remove('custom-active-content'));
-      
-          button.classList.add('custom-active-tab');
-          document.getElementById(tabId).classList.add('custom-active-content');
+        featureItems.forEach(item => {
+            item.addEventListener("click", () => {
+                modalDetails.textContent = item.dataset.details;
+                modal.style.display = "block";
+            });
         });
-      });
-       -->
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+
+        /**************contact us********************/
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            let isValid = true;
+
+            const nameInput = document.getElementById('name');
+            const nameError = document.getElementById('nameError');
+            if (nameInput.value.trim() === '') {
+                nameError.style.display = 'block';
+                isValid = false;
+            } else {
+                nameError.style.display = 'none';
+            }
+
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                emailError.style.display = 'block';
+                isValid = false;
+            } else {
+                emailError.style.display = 'none';
+            }
+
+            const messageInput = document.getElementById('message');
+            const messageError = document.getElementById('messageError');
+            if (messageInput.value.trim() === '') {
+                messageError.style.display = 'block';
+                isValid = false;
+            } else {
+                messageError.style.display = 'none';
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+        /**********************************/
+    </script>
+    
 </body>
 </html>
