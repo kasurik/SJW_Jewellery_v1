@@ -544,7 +544,46 @@
     text-align: center; /* Centers the button horizontally */
   }
   /********************************************/
+/********************<!-- new showcase section -->**************************/
+.jewelry-showcase-section {
+    text-align: center;
+    padding: 40px 20px;
+}
 
+.jewelry-showcase-heading {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.jewelry-showcase-description {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .jewelry-showcase-heading {
+        font-size: 2em;
+    }
+
+    .jewelry-showcase-description {
+        font-size: 1em;
+    }
+}
+/**********************<!-- new showcase section -->**********************/
+
+/*****************************************************************/
+/* Mobile Responsive */
+@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+    .homepage-video-content {
+        display: none; /* Hide the video content */
+    }
+}
+/****************************************************************/
 
   </style>
 </head>
@@ -708,30 +747,17 @@
    
 </section>
   <!-- home page bottom section -->
-         
-          <section id="about" class="about-page">
-            <div class="about-container">
-              <div class="about-left">
-              
-                <h2 class="section-title">
-                  Our Story
-                </h2>
-                <h2>Sirisena Jewellery Workshop</h2>
-                <p>Since 2021, Sirisena Jewellers has been guiding artisans to explore stunning designs and craft breathtaking pieces. From simple pendants to intricate sets, we craft experiences that inspire and excite.</p>
-                <p>Discover exquisite handcrafted jewellery and learn the art of jewellery making at Sirisena Jewellery Workshop. Explore our latest collections and workshop schedules.</p>
-            
-              
-              </div>
-              <div class="about-right">
-                <img src="/assets/img/right-about.jpg" alt="about" />
-                <img src="/assets/img/right-about.jpg" alt="about" />
 
-              
-              </div>
+  <!-- new showcase section -->
+  <section class="jewelry-showcase-section">
+    <h2 class="jewelry-showcase-heading">Explore Exquisite Jewelry Designs</h2>
+    <p class="jewelry-showcase-description">
+        Discover a world of elegance and craftsmanship at our jewelry shop. We showcase a stunning collection of handcrafted designs, from timeless classics to modern masterpieces. Our curated selection features precious gemstones, fine metals, and meticulous detailing, ensuring each piece tells a unique story. Whether you're seeking a special gift or a personal treasure, our jewelry embodies the art of enduring beauty.
+    </p>
+</section>
 
-              
-            </div>
-          </section>
+<!-- new showcase section -->
+       
          
       </main>
       <div class="overlay d-none" id="overlay"></div>
