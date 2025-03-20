@@ -285,7 +285,142 @@
         padding-left: 0;
       }
     }
+/****************home page bottom sectionhome page bottom section******************************/
+.homepage-video-section {
+  display: flex;
+  flex-wrap: wrap;
+/*  max-width: 1200px;*/
+max-width: 100vw;
+  margin: 40px auto;
+  padding: 20px;
+/*  background-color: #f8f8f8;*/
+background-color: transparent;
+ /* border-radius: 8px;*/
+ /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
+}
 
+.homepage-text-content {
+  width: 50%;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.homepage-text-heading {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.homepage-text-subheading {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.homepage-text-paragraph {
+  line-height: 1.6;
+  color: #666;
+}
+
+.homepage-video-content {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.homepage-video-element {
+ /* width: 100%;*/
+   height: 400px; /* Set a fixed height */
+    width: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .homepage-text-content, .homepage-video-content {
+      width: 100%;
+      padding: 0;
+  }
+
+  .homepage-text-content {
+      margin-bottom: 20px;
+  }
+}
+/******************home page bottom section***************************/
+
+/*******************video content left btn**************************/
+.video-content-left-button-container{
+
+  text-align: center; /* Centers the button horizontally */
+}
+
+.video-content-left-heading-container{
+
+  text-align: center; /* Centers the button horizontally */
+}
+/********************************************/
+
+/*****************home page explore more part showcase************************/
+.centered-content-section {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.centered-content-text {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+/*
+.centered-content-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  text-decoration: none; 
+  display: inline-block; 
+}*/
+
+/*.centered-content-button:hover {
+  background-color: #0056b3;
+}
+*/
+/* 
+Responsive Styles */
+@media (max-width: 600px) {
+  .centered-content-text {
+      font-size: 1em;
+  }
+
+ /* .centered-content-button {
+      padding: 10px 20px;
+      font-size: 0.9em;
+  }*/
+}
+/**********************home page explore more part showcase*******************/
+
+/*****************home-page-offer-highlighter-line************************/
+
+  .home-page-offer-highlighter-line {
+  /*  width: 200px;
+    height: 100px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    border: 4px solid;*/
+    border: 4px solid;
+    animation: goldWhiteBorder 5s linear infinite alternate; /* Alternate to go back and forth */
+        }
+
+        @keyframes goldWhiteBorder {
+            0% { border-color: gold; }
+            100% { border-color: white; }
+        }
+
+
+/**********************home-page-offer-highlighter-line******************/
   
   </style>
 </head>
@@ -340,8 +475,10 @@
                       <h1 id="hero-title">Sirisena Jewellers & Workshop</h1>
                       <p>Discover exquisite handcrafted jewelry and learn to create your own in our inspiring workshops!</p>
                       <div class="hero-btns">
-                          <button class="btn btn-primary">More <i class="fa-solid fa-angles-right"></i></button>
-                          <button class="btn btn-secondary">Contact Us <i class="fa-solid fa-phone-flip"></i></button>
+                          <a href="services.html">  <button class="btn btn-primary">More <i class="fa-solid fa-angles-right"></i></button></a>
+                        
+                          <a href="contactus.html"> <button class="btn btn-secondary">Contact Us <i class="fa-solid fa-phone-flip"></i></button></a>
+                         
                       </div>
                   </div>
               </div>
@@ -363,10 +500,10 @@
                 <h2 class="gold-text">Exclusive Offer: 25% OFF</h2>
                 <h3 class="gold-text">All New Jewelry Designs</h3>
                 <p class="gold-text">April 15th (Under 40,000)</p>
-                <p class="gold-text">April 15th (Under 40,000)</p>
+                <p class="gold-text">25th Anniversary: Shine with Us!</p>
                 <div>
-                  <h4>Celebrate 25 Years of Sparkle with Us!</h4>
-                  <p>Join Sirisena Jewellers as we commemorate our 25th anniversary! To thank you for your continued support, we're thrilled to offer incredible discounts and exclusive deals throughout this special month. Discover stunning new designs and
+                  <h4 class="gold-text home-page-offer-highlighter-line">Celebrate 25 Years of Sparkle with Us!</h4>
+                  <p class="gold-text" style="border: none;">Join Sirisena Jewellers as we commemorate our 25th anniversary! To thank you for your continued support, we're thrilled to offer incredible discounts and exclusive deals throughout this special month. Discover stunning new designs and
                      timeless classics, all at celebratory prices. Come and share in the joy of this milestone with us!</p>
                 </div>
 
@@ -419,43 +556,51 @@
               <h2 class="section-title center">Our Showcase</h2>
               <div class="features-container">
                   <div class="feature-item">
-                      <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-                      <h6>Explore the World</h6>
-                      <p>Discover breathtaking trails and .</p>
+                      <div>  <img class="hero-img" src="/assets/img/ribbon-j3.jpg" class="rotate-right" alt="hero" /></div>
+                      <h6>24KT / <del>250,000.00 LKR</del><mark>246,000.00 LKR</mark> </h6>
+                      <p>Five Stones with White gold ring.</p>
                   </div>
                   <div class="feature-item">
-                    <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-                    <h6>Explore the World</h6>
-                    <p>Discover breathtaking trails and .</p>
+                    <div>  <img class="hero-img" src="/assets/img/plain-neckless.jpg" class="rotate-right" alt="hero" /></div>
+                    <h6>24KT / <del>250,000.00 LKR</del><mark>246,000.00 LKR</mark> </h6>
+                    <p>Plain Single Rock Chain</p>
                 </div>
                 <div class="feature-item">
-                  <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-                  <h6>Explore the World</h6>
-                  <p>Discover breathtaking trails and .</p>
+                  <div>  <img class="hero-img" src="/assets/img/ringset.jpg" class="rotate-right" alt="hero" /></div>
+                  <h6>24KT / <del>250,000.00 LKR</del><mark>246,000.00 LKR</mark> </h6>
+                  <p>Plaine gold Ring set</p>
               </div>
               <div class="feature-item">
-                <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-                <h6>Explore the World</h6>
-                <p>Discover breathtaking trails and .</p>
+                <div>  <img class="hero-img" src="/assets/img/ring-earing-set.jpg" class="rotate-right" alt="hero" /></div>
+                <h6>24KT / <del>250,000.00 LKR</del><mark>246,000.00 LKR</mark> </h6>
+                <p>Ocean Ring Earring set</p>
             </div>
             <div class="feature-item">
-              <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-              <h6>Explore the World</h6>
-              <p>Discover breathtaking trails and .</p>
+              <div>  <img class="hero-img" src="/assets/img/chains-set.jpg" class="rotate-right" alt="hero" /></div>
+              <h6>24KT / <del>250,000.00 LKR</del><mark>246,000.00 LKR</mark> </h6>
+              <p>Dual stone Chain</p>
           </div>
           <div class="feature-item">
-            <div>  <img class="hero-img" src="/assets/img/hero-left-pic2.png" class="rotate-right" alt="hero" /></div>
-            <h6>Explore the World</h6>
-            <p>Discover breathtaking trails and .</p>
+            <div>  <img class="hero-img" src="/assets/img/three-ring-set.jpg" class="rotate-right" alt="hero" /></div>
+            <h6>24KT / <del>250,000.00 LKR</del><mark>246,000.00 LKR</mark> </h6>
+            <p>Nature Ring Set</p>
         </div>
               </div>
+
+              <!-- home new explore more part -->
+              <div class="centered-content-section">
+                <p class="centered-content-text">If you want explore more then</p>
+                <!-- <a href="#" class="centered-content-button">Explore Now</a> -->
+                      <a href="showcase.html" class="centered-content-button"> 
+                <button  class="btn btn-primary  center-button">Click here <i class="fa-solid fa-angles-right"></i></button>
+              </a>
+            </div>
+              <!-- new explore more part -->
           </section>
-          <section id="about" class="about">
+          <!-- <section id="about" class="about">
             <div class="about-container">
               <div class="about-left">
-                <!-- <h4 class="section-subtitle">
-                  About SJW Jewellers
-                </h4> -->
+                
                 <h2 class="section-title">
                   Unique Jewelry & Jewelry Making Workshops
                 </h2>
@@ -486,7 +631,7 @@
                 </div>
               </div>
               <div class="about-right">
-                <!-- <img src="/assets/img/about-image.png" alt="about" /> -->
+                <img src="/assets/img/about-image.png" alt="about" />
 
                 <div class="custom-tab-container">
                   <div class="custom-tab-header">
@@ -506,7 +651,32 @@
                 </div>
               </div>
             </div>
-          </section>
+          </section> -->
+
+          <!-- home page bottom section -->
+          <section class="homepage-video-section">
+            <div class="homepage-text-content">
+                <h2 class="homepage-text-heading video-content-left-heading-container">Welcome to Our Site</h2>
+                <h3 class="homepage-text-subheading">Discover Our Story</h3>
+                <p class="homepage-text-paragraph">We are dedicated to providing exceptional services and products. Our team is passionate about innovation and customer satisfaction. Watch our video to learn more about our journey and what we offer.</p>
+               
+                <div class="video-content-left-button-container">
+                  <a href="aboutus.html" class="centered-content-button"> 
+                  
+                  <button class="btn btn-primary  center-button">More <i class="fa-solid fa-angles-right"></i></button>
+                </a>
+              </div>
+              </div>
+            <div class="homepage-video-content">
+                <!-- <video src="assets/img/jewellery-video1.mp4" autoplay loop muted playsinline controls class="homepage-video-element">
+                    Your browser does not support the video tag.
+                </video> -->
+                <video src="assets/img/jewellery-video2.mp4" autoplay loop muted playsinline controls class="homepage-video-element">
+                  Your browser does not support the video tag.
+              </video>
+            </div>
+        </section>
+          <!-- home page bottom section -->
       </main>
       <div class="overlay d-none" id="overlay"></div>
       <div class="mobile-menu d-none" id="mobileMenu">

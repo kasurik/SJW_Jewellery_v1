@@ -156,6 +156,79 @@
         width: calc(100% - 100px);
     }
     }
+
+
+    /*****************services=page-related-carasol**************************/
+    .jewelry-carousel-container {
+      width: 80%;
+      max-width: 800px;
+      margin: 20px auto;
+      overflow: hidden;
+      position: relative;
+  }
+
+  .jewelry-carousel-slide-container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+  }
+
+ /* .jewelry-carousel-slide {
+      min-width: 100%;
+      height: auto;
+  }*/
+
+  /*
+  .jewelry-carousel-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+  }*/
+
+  .jewelry-carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+  }
+
+  .jewelry-carousel-controls button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 1.2em;
+  }
+
+  /* Mobile Responsive */
+/*  @media (max-width: 600px) {
+      .jewelry-carousel-container {
+          width: 95%;
+      }
+  }*/
+
+  /******************************/
+
+  .jewelry-carousel-slide {
+    min-width: 100%;
+    height: 400px; /* Set a fixed height */
+}
+
+.jewelry-carousel-slide img {
+    width: 100%;
+    height: 100%; /* Fill the slide */
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .jewelry-carousel-slide{
+        height: 300px; /* adjusted mobile height */
+    }
+}
+    /*******************services=page-related-carasol************************/
     </style>
 </head>
 <body>
@@ -201,7 +274,7 @@
           <section id="hero" class="hero">
               <div class="hero-container">
                   <div class="hero-left _desktop">
-                    <img class="hero-img" src="/assets/img/aboutus-hero-left-pic2.jpg" class="rotate-right" alt="hero" />
+                    <img class="hero-img" src="/assets/img/services-bg1.jpg" class="rotate-right" alt="hero" />
                       <!-- <img src="/assets/img/hero.png" class="rotate-right" alt="hero" /> -->
                   </div>
                   <div class="hero-right">
@@ -235,11 +308,24 @@
             
              
               </div>
-              <div class="about-right">
-                <img src="/assets/img/right-about.jpg" alt="about" />
+              <div class="service-about-right">
+                <!-- <img src="/assets/img/right-about.jpg" alt="about" /> -->
                 <!-- <img src="/assets/img/right-about.jpg" alt="about" /> -->
 
-             
+                <!-- services=page-related-carasol -->
+                <div class="jewelry-carousel-container">
+                  <div class="jewelry-carousel-slide-container" id="jewelryCarouselSlides">
+                      <div class="jewelry-carousel-slide"><img src="assets/img/single-ring.jpg" alt="Jewelry 1"></div>
+                      <div class="jewelry-carousel-slide"><img src="assets/img/chains-set.jpg" alt="Jewelry 2"></div>
+                      <div class="jewelry-carousel-slide"><img src="assets/img/neckleace.jpg" alt="Jewelry 3"></div>
+                      <div class="jewelry-carousel-slide"><img src="assets/img/neckleace.jpg" alt="Jewelry 4"></div>
+                  </div>
+                  <div class="jewelry-carousel-controls">
+                      <button id="prevSlide">&#10094;</button>
+                      <button id="nextSlide">&#10095;</button>
+                  </div>
+              </div>
+             <!-- services=page-related-carasol  -->
               </div>
 
               
@@ -270,21 +356,28 @@
             </div> -->
 
             <div id="abt-newFeatureContent">
-                <button id="toggleButton">Toggle Content</button>
+                <button id="toggleButton">Custom Designs</button>
                 <div id="myContent" class="content">
-                    This is the content that will be toggled.
+                  Turn your vision into reality with our custom design service. Our expert jewelers will work with you to create
+                   a unique piece that reflects your personal
+                   style and story. From concept to completion, we'll bring your dream jewelry to life.
                 </div>
             </div>
             <div id="abt-newFeatureContent2">
-              <button id="toggleButton2">Toggle Content</button>
+              <button id="toggleButton2">Jewellery Repair</button>
               <div id="myContent2" class="content">
-                  This is the content that will be toggled.
+                Bring your damaged or worn jewelry back to its former glory with our expert repair services. From simple fixes to
+                 complex restorations, our skilled jewelers will 
+                handle your precious pieces with care. Trust us to make your jewelry shine again.
               </div>
           </div>
             <div id="abt-newFeatureContent3">
-              <button id="toggleButton3">Toggle Content</button>
+              <button id="toggleButton3">Gemstone Setting</button>
               <div id="myContent3" class="content">
-                  This is the content that will be toggled.
+                Whether you've inherited a loose gemstone, want to redesign an existing piece, or are creating a custom design,
+                 our gemstone setting service is here to meet your needs. We'll work closely with you to select the perfect setting 
+                 style that complements your stone and personal style. Our commitment to quality ensures your gemstone is securely and 
+                 beautifully set, ready to be treasured for generations.
               </div>
           </div>
 
@@ -396,7 +489,36 @@
         }
     });
 
+/********************************services=page-related-carasol****************************/
+const slides = document.getElementById('jewelryCarouselSlides');
+const prevButton = document.getElementById('prevSlide');
+const nextButton = document.getElementById('nextSlide');
+let currentIndex = 0;
+const slideWidth = document.querySelector('.jewelry-carousel-slide').offsetWidth;
 
+function updateSlidePosition() {
+    slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
+
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.children.length;
+    updateSlidePosition();
+});
+
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.children.length) % slides.children.length;
+    updateSlidePosition();
+});
+
+// Make it responsive on resize
+window.addEventListener('resize', () => {
+    const newSlideWidth = document.querySelector('.jewelry-carousel-slide').offsetWidth;
+    if (newSlideWidth !== slideWidth) {
+        slideWidth = newSlideWidth;
+        updateSlidePosition();
+    }
+});
+/*************************services=page-related-carasol***********************************/
         
     </script>
 
